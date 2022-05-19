@@ -1,0 +1,56 @@
+body{
+    background-color: rgb(226, 223, 223);
+    font-family: 'Montserrat', sans-serif;
+}
+.container{
+    width: 940px;
+    margin:0px auto;  
+}
+.botoes{
+    position: relative;
+    top: 335px;
+    padding: 10px;
+    
+}
+.div_cmç{
+    margin-top: 5px;
+
+}
+.div_add{
+    margin-top: 5px;
+
+}
+
+.btn_cmç{
+    
+    background-color: aquamarine;
+    height: 60px;
+    width: 200px;
+    display:block;
+    margin: 0px auto;
+    border: solid 3px rgb(139, 105, 234) ;
+    border-radius: 10px;
+    font-weight: bold;
+         
+}
+.btn_add{
+    background-color: aquamarine;
+    height: 60px;
+    width: 200px;
+    display:block;
+    margin: 0px auto;
+    border: solid 3px rgb(139, 105, 234) ;
+    border-radius: 10px;
+    font-weight: bold;
+
+     
+}
+
+@media screen and (max-width:480px) {
+    .container{
+        width: 100%;
+    }
+}
+
+
+

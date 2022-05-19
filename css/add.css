@@ -1,0 +1,17 @@
+body {
+    background-color: rgb(226, 223, 223);
+    font-family: 'Montserrat', sans-serif;
+}
+
+.container {
+    width: 940px;
+    margin: 0px auto;
+}
+
+.div_palavra{
+    background: orange;
+    text-align: center;
+}
+.palavra{
+    width: 250px;
+}
