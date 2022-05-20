@@ -9,9 +9,68 @@ body {
 }
 
 .div_palavra{
-    background: orange;
-    text-align: center;
+    position: relative;
+    top: 256px;
 }
 .palavra{
     width: 250px;
+    padding: 8px;
+    width: 330px;
+    border: solid 2px rgb(139, 105, 234);
+    
+    
+}
+
+.palavra::placeholder{
+    color: rgb(59, 152, 245);
+    font-weight: bold;
+    font-size: 20px;
+}
+small{
+    display: block;
+    margin-bottom: 10px;
+    color: #495057;
+    font-weight: bold;
+    font-size: 13px;
+}
+.botoes{
+    position: relative;
+    top: 520px;
+}
+.btn_salvar{
+    background-color: rgb(59, 152, 245);
+    height: 60px;
+    width: 40%;
+    display:inline-block;
+    margin: 0px auto;
+    border: solid 3px rgb(139, 105, 234) ;
+    border-radius: 10px;
+    font-weight: bold;
+    color: white;
+
+}
+.btn_cancel{
+    background-color: rgb(59, 152, 245);
+    height: 60px;
+    width: 40%;
+    display:inline-block;
+    margin: 0px auto;
+    border: solid 3px rgb(139, 105, 234) ;
+    border-radius: 10px;
+    font-weight: bold;
+    color: white;
+    
+
+}
+
+@media screen and (max-width:480px) {
+    .container{
+        width: 100%;
+    }
+    .botoes{
+        text-align: center;
+    }
+    .div_palavra{
+        text-align: center;
+    }
 }

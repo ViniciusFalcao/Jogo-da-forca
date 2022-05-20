@@ -23,7 +23,7 @@ body{
 
 .btn_cmç{
     
-    background-color: aquamarine;
+    background-color: rgb(59, 152, 245);
     height: 60px;
     width: 200px;
     display:block;
@@ -31,10 +31,11 @@ body{
     border: solid 3px rgb(139, 105, 234) ;
     border-radius: 10px;
     font-weight: bold;
+    color: white;
          
 }
 .btn_add{
-    background-color: aquamarine;
+    background-color: rgb(59, 152, 245);
     height: 60px;
     width: 200px;
     display:block;
@@ -42,6 +43,7 @@ body{
     border: solid 3px rgb(139, 105, 234) ;
     border-radius: 10px;
     font-weight: bold;
+    color: white;
 
      
 }
