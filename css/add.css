@@ -40,25 +40,27 @@ small{
 .btn_salvar{
     background-color: rgb(59, 152, 245);
     height: 60px;
-    width: 40%;
+    width: 30%;
     display:inline-block;
     margin: 0px auto;
     border: solid 3px rgb(139, 105, 234) ;
-    border-radius: 10px;
+    border-radius: 18px;
     font-weight: bold;
     color: white;
+    font-size: 18px;
 
 }
 .btn_cancel{
     background-color: rgb(59, 152, 245);
     height: 60px;
-    width: 40%;
+    width: 30%;
     display:inline-block;
     margin: 0px auto;
     border: solid 3px rgb(139, 105, 234) ;
-    border-radius: 10px;
+    border-radius: 18px;
     font-weight: bold;
     color: white;
+    font-size: 18px;
     
 
 }
@@ -73,4 +75,12 @@ small{
     .div_palavra{
         text-align: center;
     }
+    .btn_salvar{
+        width: 170px;
+    }
+    .btn_cancel{
+        width: 170px;
+
+    }
+    
 }

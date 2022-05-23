@@ -25,25 +25,27 @@ body{
     
     background-color: rgb(59, 152, 245);
     height: 60px;
-    width: 200px;
+    width: 30%;
     display:block;
     margin: 0px auto;
     border: solid 3px rgb(139, 105, 234) ;
-    border-radius: 10px;
+    border-radius: 18px;
     font-weight: bold;
     color: white;
+    font-size: 18px;
          
 }
 .btn_add{
     background-color: rgb(59, 152, 245);
     height: 60px;
-    width: 200px;
+    width: 30%;
     display:block;
     margin: 0px auto;
     border: solid 3px rgb(139, 105, 234) ;
-    border-radius: 10px;
+    border-radius: 18px;
     font-weight: bold;
     color: white;
+    font-size: 18px;
 
      
 }
@@ -51,6 +53,14 @@ body{
 @media screen and (max-width:480px) {
     .container{
         width: 100%;
+    }
+    .btn_cmç{
+        width: 200px;
+
+    }
+    .btn_add{
+        width: 200px;
+
     }
 }
 
