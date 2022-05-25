@@ -1,12 +1,15 @@
 
+
 addEventListener('load', function renderiza() {
     //Dados do jogo
     var lista = ['ALURA', 'CASA', 'JAVA', 'FRONTEND', 'PANELA']
     var erros = 0;
     var acertos = 0;
+    var caps=false
     //Funções
     function sorteiaPalavra() {
-        var n_sorteados = Math.round(Math.random() * (lista.length - 1))
+        var n_sorteados = Math.floor(Math.random() * lista.length)
+        
         return n_sorteados
 
     }
@@ -15,6 +18,7 @@ addEventListener('load', function renderiza() {
             var div = document.querySelector('.letras')
             var input = document.createElement('input')
             input.classList.add('input_palavra')
+            
 
             div.appendChild(input)
 
@@ -25,10 +29,11 @@ addEventListener('load', function renderiza() {
     function valorLetras(tecla) {
         var letras = document.querySelectorAll('.input_palavra')
         var letra_igual = false;
+        var tecl_up=tecla.toUpperCase()
 
 
         for (let index = 0; index < letras.length; index++) {
-            if (tecla == palavra[index]) {
+            if (tecl_up == palavra[index]) {
                 letras[index].value = palavra[index];
                 letra_igual = true
 
@@ -37,11 +42,16 @@ addEventListener('load', function renderiza() {
 
 
         }
-        if (!letra_igual) {
+        if (!letra_igual && tecla!='CapsLock' && tecla!='Shift') {
+
+            
             var p = document.querySelector('p')
             var input = document.createElement('input');
-            input.value = `${tecla}`
+            input.value = `${tecla.toUpperCase()}`
             input.classList.add('input_falhas')
+            input.addEventListener('click',function(){
+                this.blur();
+            })
 
             p.appendChild(input)
 
@@ -64,12 +74,38 @@ addEventListener('load', function renderiza() {
     var palavra = lista[sorteiaPalavra()]
 
     carregaLetras();
+
+    var inputs=document.querySelectorAll('.input_palavra')
+    for (let index = 0; index < inputs.length; index++) {
+        inputs[index].addEventListener('click',function () {
+            this.blur()
+            
+        })
+        
+    }
+
+    
+    
+    
     addEventListener('keydown', function (tecla) {
-        valorLetras(tecla.key);
-        console.log('erros:'+erros)
-        console.log('acertos: '+acertos)
+        if(tecla.key=='Alt'){
+            tecla.preventDefault();
+            return
 
+        }
+        
+        var padrao='[A-Z]'
+        if (!tecla.key.match(padrao)) {
+            return
+            
+        }                  
 
+        
+            valorLetras(tecla.key);
+            
+        
+
+            console.log(tecla.key)
     })
 
 

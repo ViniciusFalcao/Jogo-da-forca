@@ -49,6 +49,11 @@ body {
     
     
 }
+.input_palavra:focus{
+    box-shadow: 0 0 0 0;
+    outline: 0;
+    
+}
 
 #canvas_palavra {
     position: absolute;
@@ -71,6 +76,12 @@ body {
     text-align: center;
     font-weight: bold;
     color: #0A3871;
+}
+.input_falhas:focus{
+    box-shadow: 0 0 0 0;
+    outline: 0;
+
+
 }
 
 .botoes {
