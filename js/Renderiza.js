@@ -5,11 +5,11 @@ addEventListener('load', function renderiza() {
     var lista = ['ALURA', 'CASA', 'JAVA', 'FRONTEND', 'PANELA']
     var erros = 0;
     var acertos = 0;
-    var caps=false
+    var caps = false
     //Funções
     function sorteiaPalavra() {
         var n_sorteados = Math.floor(Math.random() * lista.length)
-        
+
         return n_sorteados
 
     }
@@ -18,7 +18,7 @@ addEventListener('load', function renderiza() {
             var div = document.querySelector('.letras')
             var input = document.createElement('input')
             input.classList.add('input_palavra')
-            
+
 
             div.appendChild(input)
 
@@ -29,7 +29,7 @@ addEventListener('load', function renderiza() {
     function valorLetras(tecla) {
         var letras = document.querySelectorAll('.input_palavra')
         var letra_igual = false;
-        var tecl_up=tecla.toUpperCase()
+        var tecl_up = tecla.toUpperCase()
 
 
         for (let index = 0; index < letras.length; index++) {
@@ -42,25 +42,40 @@ addEventListener('load', function renderiza() {
 
 
         }
-        if (!letra_igual && tecla!='CapsLock' && tecla!='Shift') {
+        if (!letra_igual && tecla != 'CapsLock' && tecla != 'Shift') {
+            var repetiu = false;
 
-            
-            var p = document.querySelector('p')
-            var input = document.createElement('input');
-            input.value = `${tecla.toUpperCase()}`
-            input.classList.add('input_falhas')
-            input.addEventListener('click',function(){
-                this.blur();
-            })
+            var falhas = document.querySelectorAll('.input_falhas')
 
-            p.appendChild(input)
+            for (let index = 0; index < falhas.length; index++) {
+                if (falhas[index].value == tecla) {
+                    repetiu = true;
+                    break;
 
-            erros++
+                }
+
+            }
+
+
+            if (!repetiu) {
+                var p = document.querySelector('p')
+                var input = document.createElement('input');
+                input.value = `${tecla.toUpperCase()}`
+                input.classList.add('input_falhas')
+                input.addEventListener('click', function () {
+                    this.blur();
+                })
+
+                p.appendChild(input)
+
+                erros++
+
+            }
 
         }
         if (letra_igual) {
             acertos++
-            
+
         }
 
 
@@ -75,37 +90,38 @@ addEventListener('load', function renderiza() {
 
     carregaLetras();
 
-    var inputs=document.querySelectorAll('.input_palavra')
+    var inputs = document.querySelectorAll('.input_palavra')
     for (let index = 0; index < inputs.length; index++) {
-        inputs[index].addEventListener('click',function () {
+        inputs[index].addEventListener('click', function () {
             this.blur()
-            
+
         })
-        
+
     }
 
-    
-    
-    
+
+
+
     addEventListener('keydown', function (tecla) {
-        if(tecla.key=='Alt'){
+        if (tecla.key == 'Alt') {
             tecla.preventDefault();
             return
 
         }
-        
-        var padrao='[A-Z]'
+
+        var padrao = '[A-Z]'
         if (!tecla.key.match(padrao)) {
             return
-            
-        }                  
 
-        
-            valorLetras(tecla.key);
-            
-        
+        }
 
-            console.log(tecla.key)
+
+        valorLetras(tecla.key);
+
+
+
+        console.log(tecla.key)
+        console.log('erros:'+erros+'  acertos'+acertos)
     })
 
 
