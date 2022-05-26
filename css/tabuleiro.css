@@ -8,6 +8,11 @@ body {
     margin: 0px auto;
 
 }
+.forca{
+    position: absolute;
+    left: 35%;
+    top: 60px;
+}
 
 .principal {
     position: absolute;
@@ -15,6 +20,7 @@ body {
     height: 152px;
     left: 35%;
     top: 400px;
+    
     
 
 

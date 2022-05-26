@@ -102,7 +102,8 @@ addEventListener('load', function renderiza() {
 
 
 
-    addEventListener('keydown', function (tecla) {
+    addEventListener('keypress', function (tecla) {
+        
         if (tecla.key == 'Alt') {
             tecla.preventDefault();
             return
@@ -121,7 +122,7 @@ addEventListener('load', function renderiza() {
 
 
         console.log(tecla.key)
-        console.log('erros:'+erros+'  acertos'+acertos)
+        console.log('erros:'+erros+'  acertos:'+acertos)
     })
 
 
