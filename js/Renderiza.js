@@ -49,7 +49,7 @@ addEventListener('load', function renderiza() {
             var falhas = document.querySelectorAll('.input_falhas')
 
             for (let index = 0; index < falhas.length; index++) {
-                if (falhas[index].value == tecla) {
+                if (falhas[index].value == tecl_up) {
                     repetiu = true;
                     break;
 
@@ -92,7 +92,7 @@ addEventListener('load', function renderiza() {
                         location.reload()
 
 
-                    }, 2000);
+                    }, 500);
 
 
                 }
@@ -168,7 +168,7 @@ addEventListener('load', function renderiza() {
                 alert('Você Ganhou')
                 location.reload()
 
-            }, 2000)
+            }, 500)
 
 
         }
