@@ -2,6 +2,7 @@
 
 addEventListener('load', function renderiza() {
     //Dados do jogo
+    var input_cell=document.querySelector('.input_cell')
     var lista = ['ALURA', 'CASA', 'JAVA', 'FRONTEND', 'PANELA']
     var erros = 0;
     var acertos = 0;
@@ -116,6 +117,7 @@ addEventListener('load', function renderiza() {
     var palavra = lista[sorteiaPalavra()]
 
     carregaLetras();
+    input_cell.focus()
 
     var inputs = document.querySelectorAll('.input_palavra')
     for (let index = 0; index < inputs.length; index++) {

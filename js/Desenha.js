@@ -35,7 +35,7 @@ function desenhaTronco() {
 }
 function desenhaBraçoD() {
     context.beginPath();
-    context.moveTo(260, 170);
+    context.moveTo(262, 170);
     context.lineTo(275, 185);
     context.stroke();
 
@@ -43,7 +43,7 @@ function desenhaBraçoD() {
 }
 function desenhaBraçoE() {
     context.beginPath();
-    context.moveTo(260, 170);
+    context.moveTo(261, 170);
     context.lineTo(245, 185);
     context.stroke();
 
@@ -52,7 +52,7 @@ function desenhaBraçoE() {
 function desenhaPernaD() {
     context.beginPath();
     context.fillStyle = '#0A3871'
-    context.moveTo(260, 210);
+    context.moveTo(261, 210);
     context.lineTo(280, 230);
     context.stroke();
 
