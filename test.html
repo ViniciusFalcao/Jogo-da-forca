@@ -10,12 +10,27 @@
 
 <body>
     <input type="text">
+    <canvas width="600" height="400"></canvas>
     <script>
         var input=document.querySelector('input')
         input.addEventListener('click',function(){
             this.blur()
 
         })
+        var canvas=document.querySelector('canvas');
+        var pincel=canvas.getContext('2d');
+
+        pincel.fillStyle='black';
+        pincel.fillRect(0,0,600,400)
+
+        var lista=['ALURA', 'CASA', 'JAVA', 'FRONTEND', 'PANELA']
+
+        localStorage.setItem('listas',JSON.stringify(lista))
+        
+        
+        var list=JSON.parse(localStorage.listas)
+
+        console.log(list)
 
     </script>
 </body>

@@ -6,6 +6,7 @@ addEventListener('load', function renderiza() {
     var erros = 0;
     var acertos = 0;
     var caps = false
+    var ganhou = false
     //Funções
     function sorteiaPalavra() {
         var n_sorteados = Math.floor(Math.random() * lista.length)
@@ -69,6 +70,32 @@ addEventListener('load', function renderiza() {
                 p.appendChild(input)
 
                 erros++
+                if (erros == 1) {
+                    desenhaCabeça()
+
+                } else if (erros == 2) {
+                    desenhaTronco()
+
+                } else if (erros == 3) {
+                    desenhaBraçoD()
+
+                } else if (erros == 4) {
+                    desenhaBraçoE()
+
+                } else if (erros == 5) {
+                    desenhaPernaD()
+
+                } else {
+                    desenhaPernaE()
+                    setTimeout(() => {
+                        alert('Você perdeu!')
+                        location.reload()
+
+
+                    }, 2000);
+
+
+                }
 
             }
 
@@ -103,14 +130,16 @@ addEventListener('load', function renderiza() {
 
 
     addEventListener('keypress', function (tecla) {
-        
+
+
+
         if (tecla.key == 'Alt') {
             tecla.preventDefault();
             return
 
         }
 
-        var padrao = '[A-Z]'
+        var padrao = '[A-Z-a-z]'
         if (!tecla.key.match(padrao)) {
             return
 
@@ -120,9 +149,31 @@ addEventListener('load', function renderiza() {
         valorLetras(tecla.key);
 
 
+        for (let index = 0; index < palavra.length; index++) {
+            var blocos = document.querySelectorAll('.input_palavra')
+            if (palavra[index] == blocos[index].value) {
+                ganhou = true;
 
+            } else {
+                ganhou = false;
+                break;
+            }
+
+        }
         console.log(tecla.key)
-        console.log('erros:'+erros+'  acertos:'+acertos)
+        console.log('erros:' + erros + '  acertos:' + acertos)
+        console.log(ganhou)
+        if (ganhou) {
+            setTimeout(function () {
+                alert('Você Ganhou')
+                location.reload()
+
+            }, 2000)
+
+
+        }
+
+
     })
 
 
