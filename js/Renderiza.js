@@ -2,7 +2,7 @@
 
 addEventListener('load', function renderiza() {
     //Dados do jogo
-    var input_cell=document.querySelector('.input_cell')
+    var input_cell = document.querySelector('.input_cell')
     var lista = ['ALURA', 'CASA', 'JAVA', 'FRONTEND', 'PANELA']
     var erros = 0;
     var acertos = 0;
@@ -111,6 +111,13 @@ addEventListener('load', function renderiza() {
     }
 
     //Código
+    var btn_novoj = document.querySelector('.btn_novoj')
+
+    btn_novoj.addEventListener('click', function () {
+        location.reload()
+
+    })
+
 
 
 
@@ -177,6 +184,50 @@ addEventListener('load', function renderiza() {
 
 
     })
+
+    var btns_teclado = document.querySelectorAll('.btn_teclado')
+    console.log(btns_teclado)
+
+    for (let index = 0; index < btns_teclado.length; index++) {
+        btns_teclado[index].addEventListener('click', function () {
+            var tecla = this.textContent
+            valorLetras(tecla);
+
+
+            for (let index = 0; index < palavra.length; index++) {
+                var blocos = document.querySelectorAll('.input_palavra')
+                if (palavra[index] == blocos[index].value) {
+                    ganhou = true;
+
+                } else {
+                    ganhou = false;
+                    break;
+                }
+
+            }
+            console.log(tecla)
+            console.log('erros:' + erros + '  acertos:' + acertos)
+            console.log(ganhou)
+            if (ganhou) {
+                setTimeout(function () {
+                    alert('Você Ganhou')
+                    location.reload()
+
+                }, 500)
+
+
+            }
+
+            console.log(tecla)
+
+
+        })
+
+
+    }
+
+
+
 
 
 

@@ -22,7 +22,8 @@ body {
     width: 464px;
     height: 152px;
     left: 35%;
-    top: 400px;
+    top: 380px;
+    
     
     
 
@@ -92,6 +93,16 @@ body {
 
 
 }
+.teclado{
+    position: absolute;
+    left: 37%;
+    top: 510px;
+    text-align: center;
+    display: none;
+}
+.teclado button{
+    margin: 5px;
+}
 
 .botoes {
     position: relative;
@@ -143,5 +154,23 @@ a{
     .input_palavra{
         margin: 8px;
         width: 5%;
+    }
+    .teclado{
+        position: absolute;
+        left: 0px;
+        width: 100%;
+        text-align: center;
+        display: inline-block;
+    }
+    .btn_teclado{
+        margin: 2px;
+        width: 6%;
+        padding: 2px;
+
+        
+        
+    }
+    .botoes{
+        top: 650px;
     }
 }
