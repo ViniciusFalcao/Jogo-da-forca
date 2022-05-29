@@ -8,13 +8,17 @@ var context = canvas.getContext('2d');
 
 
 
-context.fillStyle = '#0A3871'
 
 
-context.fillRect(180, 100, 2, 200);
-context.fillRect(180, 100, 80, 2);
-context.fillRect(260, 100, 2, 40);
-context.fillRect(0,298,468,2);
+
+
+function desenhaForca() {
+    context.fillRect(180, 100, 2, 200);
+    context.fillRect(180, 100, 80, 2);
+    context.fillRect(260, 100, 2, 40);
+    context.fillRect(0, 298, 468, 2);
+
+}
 
 
 

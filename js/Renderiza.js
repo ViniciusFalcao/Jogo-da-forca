@@ -111,6 +111,8 @@ addEventListener('load', function renderiza() {
     }
 
     //Código
+    context.fillStyle = '#0A3871'
+    desenhaForca();
     var btn_novoj = document.querySelector('.btn_novoj')
 
     btn_novoj.addEventListener('click', function () {
