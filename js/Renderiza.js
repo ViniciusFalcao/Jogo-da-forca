@@ -5,10 +5,11 @@ var list=[
     'VERMELHO', 'OCEANO', 'PAZ', 'VIVER', 'MOTO', 'AMIGOS', 'AMARELO', 'TELHADO', 'PRINCIPE', 'REI', 'CHATEADO'
 ]
 
-localStorage.setItem('lista',JSON.stringify(list))
+localStorage.setItem('list',JSON.stringify(list))
 
 addEventListener('load', function renderiza() {
     //Dados do jogo
+    var lista_default=JSON.parse(this.localStorage.list)
     var input_cell = document.querySelector('.input_cell')
     var lista = JSON.parse(this.localStorage.lista);
     console.log(lista)
