@@ -2,11 +2,15 @@ body{
     background-color: rgb(226, 223, 223);
     font-family: 'Montserrat', sans-serif;
 }
-.container{
+.display_none{
+    display: none;
+}
+
+.container_inicial{
     width: 940px;
     margin:0px auto;  
 }
-.botoes{
+.botoes_inicial{
     position: relative;
     top: 335px;
     padding: 10px;
@@ -54,7 +58,7 @@ a{
 }
 
 @media screen and (max-width:480px) {
-    .container{
+    .container_inicial{
         width: 100%;
     }
     .btn_cmç{

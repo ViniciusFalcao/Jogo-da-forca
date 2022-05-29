@@ -3,7 +3,8 @@ body {
     font-family: 'Montserrat', sans-serif;
 }
 
-.container {
+.container_add {
+    
     width: 940px;
     margin: 0px auto;
 }
@@ -12,16 +13,17 @@ body {
     position: relative;
     top: 256px;
 }
-.palavra{
+.palavra_add{
     width: 250px;
     padding: 8px;
     width: 330px;
     border: solid 2px rgb(139, 105, 234);
+    margin-left: 8px;
     
     
 }
 
-.palavra::placeholder{
+.palavra_add::placeholder{
     color: rgb(59, 152, 245);
     font-weight: bold;
     font-size: 20px;
@@ -29,11 +31,12 @@ body {
 small{
     display: block;
     margin-bottom: 10px;
+    margin-left: 8px;
     color: #495057;
     font-weight: bold;
     font-size: 13px;
 }
-.botoes{
+.botoes_add{
     position: relative;
     top: 520px;
 }
@@ -66,10 +69,10 @@ small{
 }
 
 @media screen and (max-width:480px) {
-    .container{
+    .container_add{
         width: 100%;
     }
-    .botoes{
+    .botoes_add{
         text-align: center;
     }
     .div_palavra{

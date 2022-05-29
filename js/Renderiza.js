@@ -16,6 +16,12 @@ addEventListener('load', function renderiza() {
 
     }
     function carregaLetras() {
+        var letras = document.querySelectorAll('.input_palavra');
+        letras.forEach(letra => {
+            letra.remove()
+
+        });
+
         for (let index = 0; index < palavra.length; index++) {
             var div = document.querySelector('.letras')
             var input = document.createElement('input')
@@ -113,12 +119,7 @@ addEventListener('load', function renderiza() {
     //Código
     context.fillStyle = '#0A3871'
     desenhaForca();
-    var btn_novoj = document.querySelector('.btn_novoj')
 
-    btn_novoj.addEventListener('click', function () {
-        location.reload()
-
-    })
 
 
 
@@ -242,5 +243,34 @@ addEventListener('load', function renderiza() {
 
 
     console.log(palavra)
+
+    var novo_j = document.querySelector('.btn_novoj')
+
+    novo_j.addEventListener('click', function () {
+        var falhas=document.querySelectorAll('.input_falhas')
+        falhas.forEach(element => {
+            element.remove()
+            
+        });
+        context.fillStyle = 'rgb(226, 223, 223)';
+
+        context.fillRect(0, 0, 464, 300);
+        context.fillStyle = '#0A3871'
+        desenhaForca();
+
+
+
+        palavra = lista[sorteiaPalavra()]
+        carregaLetras();
+        erros = 0;
+        acertos = 0;
+        caps = false
+        ganhou = false
+
+        console.log('nova palavra:' + palavra)
+        console.log(erros + '/' + acertos)
+
+
+    })
 
 })
