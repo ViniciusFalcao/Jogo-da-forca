@@ -43,6 +43,8 @@ btn_cmç.addEventListener('click',function () {
 btn_add.addEventListener('click',function () {
     addNone(tela_inicial);
     retiraNone(tela_add);
+    var add=document.querySelector('.palavra_add')
+    add.focus()
     
 })
 desistir.addEventListener('click',function () {

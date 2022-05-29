@@ -3,7 +3,18 @@
 addEventListener('load', function renderiza() {
     //Dados do jogo
     var input_cell = document.querySelector('.input_cell')
-    var lista = ['ALURA', 'CASA', 'JAVA', 'FRONTEND', 'PANELA']
+    var lista = JSON.parse(this.localStorage.lista);
+    console.log(lista)
+    /*[
+        'ALURA', 'CASA', 'JAVA', 'CAVALO', 'PANELA', 'CORAÇAO', 'PATO', 'RIMA', 'COMPUTADOR',
+        'COBRA', 'BRASIL', 'ALEMANHA', 'CEMITERIO', 'PAI', 'CORAL', 'PEIXE', 'SOL', 'ESCADA', 'PROGRAMADOR',
+        'FLORESTA', 'GALINHA', 'BARCO', 'FOGO', 'QUADRADO', 'AMAR', 'CAIR', 'GATO', 'JANELA', 'PORTA', 'FUSCA',
+        'VERMELHO', 'OCEANO', 'PAZ', 'VIVER', 'MOTO', 'AMIGOS', 'AMARELO', 'TELHADO', 'PRINCIPE', 'REI', 'CHATEADO'
+    ];*/
+
+    this.localStorage.setItem('lista', JSON.stringify(lista))
+
+
     var erros = 0;
     var acertos = 0;
     var caps = false
@@ -247,10 +258,10 @@ addEventListener('load', function renderiza() {
     var novo_j = document.querySelector('.btn_novoj')
 
     novo_j.addEventListener('click', function () {
-        var falhas=document.querySelectorAll('.input_falhas')
+        var falhas = document.querySelectorAll('.input_falhas')
         falhas.forEach(element => {
             element.remove()
-            
+
         });
         context.fillStyle = 'rgb(226, 223, 223)';
 
@@ -272,5 +283,77 @@ addEventListener('load', function renderiza() {
 
 
     })
+    var salvar = document.querySelector('.btn_salvar')
+    var input = document.querySelector('.palavra_add')
+
+    input.addEventListener("keypress", function (e) {
+        const char=String.fromCharCode(e.keyCode);
+        const key=e.keyCode
+        const pattern='[a-z]';
+        if (!char.match(pattern)&& key!=32) {
+            e.preventDefault();
+            
+        }
+        
+    });
+
+    salvar.addEventListener('click', function () {
+        var nova_palavra = input.value
+        var padrao = '[a-z]'
+
+        if (nova_palavra.length <= 8 && nova_palavra.match(padrao)) {
+
+
+            lista.push(nova_palavra.toUpperCase())
+            localStorage.removeItem(lista)
+
+            localStorage.setItem('lista', JSON.stringify(lista))
+
+            var falhas = document.querySelectorAll('.input_falhas')
+            falhas.forEach(element => {
+                element.remove()
+
+            });
+            context.fillStyle = 'rgb(226, 223, 223)';
+
+            context.fillRect(0, 0, 464, 300);
+            context.fillStyle = '#0A3871'
+            desenhaForca();
+
+
+
+            palavra = lista[sorteiaPalavra()]
+            carregaLetras();
+            erros = 0;
+            acertos = 0;
+            caps = false
+            ganhou = false
+
+            addNone(tela_add);
+            retiraNone(tela_jogo);
+        } else {
+            alert('Palavra invalida')
+            input.value=''
+            input.focus()
+        }
+
+
+
+
+
+
+
+
+
+
+    })
+
+    var cancel = document.querySelector('.btn_cancel')
+
+    cancel.addEventListener('click', function () {
+        location.reload();
+
+    })
+
 
 })
