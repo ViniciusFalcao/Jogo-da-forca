@@ -4,15 +4,14 @@ var list=[
     'CAMELO','SAPATO','SKATE','MOUSE','CERVEJA','BOLA','GATO','LIVRO','CANETA','MERCADO'
 ]
 
-localStorage.setItem('list',JSON.stringify(list))
+
 
 addEventListener('load', function renderiza() {
     //Dados do jogo
     var jogando=false;
-    var lista_default=JSON.parse(this.localStorage.list)
     var input_cell = document.querySelector('.input_cell')
     if (localStorage.lista==undefined) {
-        var lista =lista_default;
+        var lista =list;
         this.localStorage.setItem('lista',JSON.stringify(lista))
 
         
