@@ -21,12 +21,7 @@ addEventListener('load', function renderiza() {
     }
     
     console.log(lista)
-    /*[
-        'ALURA', 'CASA', 'JAVA', 'CAVALO', 'PANELA', 'CORAÇAO', 'PATO', 'RIMA', 'COMPUTADOR',
-        'COBRA', 'BRASIL', 'ALEMANHA', 'CEMITERIO', 'PAI', 'CORAL', 'PEIXE', 'SOL', 'ESCADA', 'PROGRAMADOR',
-        'FLORESTA', 'GALINHA', 'BARCO', 'FOGO', 'QUADRADO', 'AMAR', 'CAIR', 'GATO', 'JANELA', 'PORTA', 'FUSCA',
-        'VERMELHO', 'OCEANO', 'PAZ', 'VIVER', 'MOTO', 'AMIGOS', 'AMARELO', 'TELHADO', 'PRINCIPE', 'REI', 'CHATEADO'
-    ];*/
+   
 
     this.localStorage.setItem('lista', JSON.stringify(lista))
 
