@@ -1,8 +1,7 @@
 var list=[
-    'ALURA', 'CASA', 'JAVA', 'CAVALO', 'PANELA', 'CORAÇAO', 'PATO', 'RIMA', 'COMPUTADOR',
-    'COBRA', 'BRASIL', 'ALEMANHA', 'CEMITERIO', 'PAI', 'CORAL', 'PEIXE', 'SOL', 'ESCADA', 'PROGRAMADOR',
-    'FLORESTA', 'GALINHA', 'BARCO', 'FOGO', 'QUADRADO', 'AMAR', 'CAIR', 'GATO', 'JANELA', 'PORTA', 'FUSCA',
-    'VERMELHO', 'OCEANO', 'PAZ', 'VIVER', 'MOTO', 'AMIGOS', 'AMARELO', 'TELHADO', 'PRINCIPE', 'REI', 'CHATEADO'
+    'ALURA', 'CASA', 'JAVA', 'CAVALO', 'PANELA','LUA','SOL','CASTELO','RATO','CABELO','NOVO','JAVALI',
+    'COBRA','AZUL','OCEANO','LIMAO','CAMA','ABELHA','FUZIL','FEIRA','MORANGO','CEBOLA','FAMILIA','VESPA',
+    'CAMELO','SAPATO','SKATE','MOUSE','CERVEJA','BOLA','GATO','LIVRO','CANETA','MERCADO'
 ]
 
 localStorage.setItem('list',JSON.stringify(list))
@@ -11,7 +10,16 @@ addEventListener('load', function renderiza() {
     //Dados do jogo
     var lista_default=JSON.parse(this.localStorage.list)
     var input_cell = document.querySelector('.input_cell')
-    var lista = JSON.parse(this.localStorage.lista);
+    if (localStorage.lista==undefined) {
+        var lista =lista_default;
+        this.localStorage.setItem('lista',JSON.stringify(lista))
+
+        
+    }else{
+        var lista = JSON.parse(this.localStorage.lista);
+
+    }
+    
     console.log(lista)
     /*[
         'ALURA', 'CASA', 'JAVA', 'CAVALO', 'PANELA', 'CORAÇAO', 'PATO', 'RIMA', 'COMPUTADOR',
@@ -161,6 +169,7 @@ addEventListener('load', function renderiza() {
 
 
     addEventListener('keypress', function (tecla) {
+        
 
 
 
@@ -362,6 +371,60 @@ addEventListener('load', function renderiza() {
         location.reload();
 
     })
+
+    //funções
+function retiraNone(variavel) {
+    variavel.classList.remove('display_none')
+    
+}
+
+function addNone(variavel) {
+    variavel.classList.add('display_none')
+
+
+    
+}
+
+
+//botoes tela inicial
+var btn_cmç=document.querySelector('.btn_cmç')
+var btn_add=document.querySelector('.btn_add')
+//botoes tela de jogo
+
+var desistir=document.querySelector('.btn_desistir')
+
+//telas
+var tela_inicial=document.querySelector('.container_inicial')
+var tela_add=document.querySelector('.container_add')
+var tela_jogo=document.querySelector('.container')
+
+tela_add.classList.add('display_none')
+tela_jogo.classList.add('display_none')
+
+
+
+
+btn_cmç.addEventListener('click',function () {
+    addNone(tela_inicial);
+    retiraNone(tela_jogo);
+    
+    
+    
+
+    
+})
+
+btn_add.addEventListener('click',function () {
+    addNone(tela_inicial);
+    retiraNone(tela_add);
+    var add=document.querySelector('.palavra_add')
+    add.focus()
+    
+})
+desistir.addEventListener('click',function () {
+    location.reload()
+    
+})
 
 
 })
