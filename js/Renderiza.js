@@ -8,6 +8,7 @@ localStorage.setItem('list',JSON.stringify(list))
 
 addEventListener('load', function renderiza() {
     //Dados do jogo
+    var jogando=false;
     var lista_default=JSON.parse(this.localStorage.list)
     var input_cell = document.querySelector('.input_cell')
     if (localStorage.lista==undefined) {
@@ -169,6 +170,9 @@ addEventListener('load', function renderiza() {
 
 
     addEventListener('keypress', function (tecla) {
+        if (!jogando) {return}
+            
+        
         
 
 
@@ -213,7 +217,7 @@ addEventListener('load', function renderiza() {
 
         }
 
-
+    
     })
 
     var btns_teclado = document.querySelectorAll('.btn_teclado')
@@ -348,6 +352,7 @@ addEventListener('load', function renderiza() {
 
             addNone(tela_add);
             retiraNone(tela_jogo);
+            jogando=true;
         } else {
             alert('Palavra invalida')
             input.value=''
@@ -407,6 +412,7 @@ tela_jogo.classList.add('display_none')
 btn_cmç.addEventListener('click',function () {
     addNone(tela_inicial);
     retiraNone(tela_jogo);
+    jogando=true;
     
     
     
