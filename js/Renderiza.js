@@ -117,7 +117,7 @@ addEventListener('load', function renderiza() {
                 } else {
                     desenhaPernaE()
                     setTimeout(() => {
-                        alert('Você perdeu!')
+                        alert('Você perdeu'+',a palavra correta é :'+palavra)
                         location.reload()
 
 
@@ -203,7 +203,7 @@ addEventListener('load', function renderiza() {
         console.log(ganhou)
         if (ganhou) {
             setTimeout(function () {
-                alert('Você Ganhou')
+                alert('Você Ganhou'+',a palavra correta é: '+palavra)
                 location.reload()
 
             }, 500)
@@ -239,7 +239,7 @@ addEventListener('load', function renderiza() {
             console.log(ganhou)
             if (ganhou) {
                 setTimeout(function () {
-                    alert('Você Ganhou')
+                    alert('Você Ganhou'+',a palavra correta é: '+palavra)
                     location.reload()
 
                 }, 500)
